@@ -4,7 +4,10 @@
   "description": "(festival-backend-app)",
   "main": "server.js)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn --cwd client install && yarn --cwd client build",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
   },
   "keywords": [],
   "author": " (Tiffany Dumaire - Aaron Lazaroo - Clarence Rouvel)",
