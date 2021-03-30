@@ -4,9 +4,14 @@
   "description": "(festival-backend-app)",
   "main": "server.js)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "heroku",
+    "festival",
+    "jeux"
+  ],
   "author": " (Tiffany Dumaire - Aaron Lazaroo - Clarence Rouvel)",
   "license": "ISC",
   "dependencies": {
@@ -19,5 +24,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
+  },
+  "engines": {
+    "node": "15.7.0"
   }
 }
