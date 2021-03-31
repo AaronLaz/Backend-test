@@ -28,6 +28,20 @@ router.get('/all/:idJeu',(req,res,next) => {
     });
 });
 
+//---------------- Liste des jeux réservés ------------------------------------------
+
+//----------get------------
+/**
+ * Affichage des détails de la réservation d'un jeu pour une réservation spécifique
+ * /jeu/all/{idJeu}/{idReservation}
+ */
+router.get('/all/:idJeu/:idReservation',(req,res,next) => {
+    const id = req.params['idJeu'];
+    const id2 = req.params['idReservation']
+    db.queryAllWhere2Ordered2('Jeu','JeuReserve','Reservation','idJeu','idJeu','idReservation','idReservation',{"Jeu.idJeu":id},{"Reservation.idReservation":id2},'nomJeu',function(result){
+        res.status(200).send(result);
+    });
+});
 
 //---------------- Liste des jeux du festival ------------------------------------------ 
 
