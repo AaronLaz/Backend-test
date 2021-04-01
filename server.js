@@ -44,8 +44,4 @@ app.get("/api",(req,res) =>{
     });
 });
 
-app.use(express.json());
-
-
-
 // connection.end();
