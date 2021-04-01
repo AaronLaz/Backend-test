@@ -16,7 +16,7 @@ var corsOptions = { // les entrées ne viendront que de :
 
 // ----------------------------------------------------
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 app.listen(port, () => { 
     console.log(`Serveur à l'écoute sur le port ${port} !`); 
 });
