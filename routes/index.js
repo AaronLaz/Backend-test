@@ -6,6 +6,7 @@ module.exports = function(app){
     app.use('/reservation',require('./reservationRoute.js'));
     app.use('/societe',require('./societeRoute'));
     app.use('/suiviexposant',require('./suiviRoute'));
-   // app.use('/user',require('./userRoute'));
-    app.use('/zone',require('./zoneRoute'));  
+    //app.use("/api/users",require('./userRouter'));
+    app.use('/zone',require('./zoneRoute')); 
+    
 }
