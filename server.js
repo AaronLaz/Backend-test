@@ -16,7 +16,7 @@ var corsOptions = { // les entrées ne viendront que de :
 
 // ----------------------------------------------------
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 app.listen(port, () => { 
     console.log(`Serveur à l'écoute sur le port ${port} !`); 
 });
@@ -37,18 +37,5 @@ app.get('/', function (req, res) {
 require('./routes')(app);
 
 // ----------------------------------------------------
-app.get("/api",(req,res) =>{
-    res.json({
-        success:1,
-        message:"This is rest api working"
-    });
-});
-
-const userRouter = require("./users/user.router");
-
-app.use(express.json());
-app.use("/api/users",userRouter);
-
-
 
 // connection.end();

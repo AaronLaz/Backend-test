@@ -1,9 +1,10 @@
 const pool = require("../database/dbConfig");
 
 module.exports = {
+  
   create: (data, callBack) => {
-    pool.query(`
-            INSERT INTO User(mail,password,admin) VALUES (?,?,0)`,
+    pool.query(
+      `INSERT INTO User(mail,password,admin) VALUES (?,?,0)`,
       [
         data.mail,
         data.password
@@ -16,6 +17,7 @@ module.exports = {
       }
     );
   },
+
   getUsers: callBack => {
     pool.query(
       `SELECT idUser,mail FROM User`,
@@ -28,6 +30,7 @@ module.exports = {
       }
     );
   },
+
   getUserByUserId: (id, callBack) => {
     pool.query(
       `SELECT idUser,mail FROM User WHERE idUser = ?`,
@@ -40,6 +43,7 @@ module.exports = {
       }
     );
   },
+
   getUserByUserEmail: (mail, callBack) => {
     pool.query(
       `SELECT * from User where mail = ?`,
@@ -52,6 +56,7 @@ module.exports = {
       }
     );
   },
+
   updateUser: (data, callBack) => {
     pool.query(
       `UPDATE User set mail=?, password=? where idUser = ?`,
@@ -68,6 +73,7 @@ module.exports = {
       }
     );
   },
+
   deleteUser: (data, callBack) => {
     pool.query(
       `DELETE FROM User where idUser = ?`,

@@ -14,7 +14,7 @@ const db = require('../database/dbConfig');
  */
 router.get('/all/:idFestival',(req,res,next) => {
     const id = req.params['idFestival'];
-    db.queryAllWhere4Ordered('Societe','SuiviExposant','Reservation','JeuReserve','Jeu','idSociete','idSociete','idReservation','idReservation','idReservation','idReservation','idJeu','idJeu',{"idFestival":id},'nomSociete',function(result){
+    db.queryAllWhere4Ordered('Societe','SuiviExposant','Reservation','JeuReserve','Jeu','idSociete','idSociete','idReservation','idReservation','idReservation','idReservation','idJeu','idJeu',{"Reservation.idFestival":id},'nomSociete',function(result){
         res.send(result);
     });
 });
