@@ -24,7 +24,7 @@ const db = require('../database/dbConfig');
  */
  router.get('/:idFestival/details',(req,res,next) => {
     const id = req.params['idFestival'];
-    db.queryAllOrdered('SuiviExposant','nomJeu',function(result){
+    db.queryAllOrdered('SuiviExposant','idFestival',function(result){
         res.send(result);
     });
 });
