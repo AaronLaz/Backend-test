@@ -44,10 +44,7 @@ app.get("/api",(req,res) =>{
     });
 });
 
-const userRouter = require("./users/user.router");
-
 app.use(express.json());
-app.use("/api/users",userRouter);
 
 
 
